@@ -6,9 +6,8 @@
  */
 export const pick = (obj, ...fields) => {
   const ReturnObj = {};
-  //у нас есть список методов и список то что надо, если входит в список то оставляем иначе удаляем
   for (const [key, value] of Object.entries(obj)) {
-    if (!fields.includes(key)){
+    if (fields.includes(key)){
       ReturnObj[key] = value;
   }}
   return ReturnObj;
