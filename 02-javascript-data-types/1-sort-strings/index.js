@@ -7,10 +7,10 @@
 export function sortStrings(arr, param = 'asc') {
   return arr.slice().sort(function(a, b) {
     //localeCompare возможные варианты -1 0 1
-    const ResultCompare = a.normalize().localeCompare(b.normalize(),['ru', 'en-US'], {caseFirst: 'upper'});
+    const resultCompare = a.normalize().localeCompare(b.normalize(),['ru', 'en-US'], {caseFirst: 'upper'});
     if (param === 'asc')
-      return ResultCompare
+      return resultCompare
     else
-      return ResultCompare * -1; //инвертируем
+      return resultCompare * -1; //инвертируем
    });
 }
