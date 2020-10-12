@@ -5,10 +5,12 @@
  * @returns {string[]}
  */
 export function sortStrings(arr, param = 'asc') {
-  const sorted = arr.slice().sort(function(a, b) {
-    return a.normalize().localeCompare(b.normalize(),['ru', 'en-US'], {caseFirst: 'upper'});
+  return arr.slice().sort(function(a, b) {
+    //localeCompare возможные варианты -1 0 1
+    const ResultCompare = a.normalize().localeCompare(b.normalize(),['ru', 'en-US'], {caseFirst: 'upper'});
+    if (param === 'asc')
+      return ResultCompare
+    else
+      return ResultCompare * -1; //инвертируем
    });
-  if (param === 'desc')
-    sorted.reverse();
-  return sorted;
 }
