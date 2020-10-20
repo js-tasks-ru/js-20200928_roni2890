@@ -62,14 +62,11 @@ export default class ColumnChart {
     wrapperElement.innerHTML = this.innerHTML();
     //все это будет обернуто еще в div который мы создали ранее, надо получить вложенный div
     const element = wrapperElement.firstElementChild;
-    //console.error(element.classList);
     if (this.data.length) {
       element.classList.remove('column-chart_loading');
     }
     this.element = element;
     this.elementChartColumns = element.querySelector(`[data-element="${this.valueTagColumns}"]`);
-   // console.error(this.elementChartColumns);
-   // console.error(element.querySelector(`[data-element="columns"]`));
   }
 
   update(newData){
